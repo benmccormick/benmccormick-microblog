@@ -113,6 +113,9 @@ h6 {
   font-weight: 700;
   line-height: 1.2;
 }
+h3 {
+  color: #0193e8;
+}
 
 p {
   margin: 0;
@@ -123,6 +126,14 @@ b {
   font-weight: 500;
 }
 
+strong {
+  color: #222;
+}
+
+em {
+  color: #666;
+}
+
 ul,
 ol {
   padding: 0;
@@ -130,7 +141,7 @@ ol {
 }
 
 a {
-  color: inherit;
+  color: #F1684E;
   text-decoration: none;
 }
 
@@ -656,6 +667,8 @@ a.post-date.u-url {
 }
 
 .post-content blockquote {
+  background: #EEE;
+  font-weight: 400;
   padding: 0 0 0 calc(var(--gap) - 0.4rem);
   margin: 0 0 0 calc(var(--gap) * -1);
   border-left: 0.4rem solid var(--pro);
