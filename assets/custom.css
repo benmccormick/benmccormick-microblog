@@ -1,1 +1,11 @@
 /* Place custom css here. */
+
+twitterwidget {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .twitter-tweet {
+    margin-left: auto;
+    margin-right: auto;
+  }
