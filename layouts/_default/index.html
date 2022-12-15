@@ -13,7 +13,7 @@
 </section>
 
 <!-- $pages -->
-$pages = where site.RegularPages "Type" "post" }}
+{{ $pages = where site.RegularPages "Type" "post" }}
 
 <!-- Articles -->
 {{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
