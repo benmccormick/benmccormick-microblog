@@ -13,6 +13,7 @@
 </section>
 
 <!-- $pages -->
+{{ $pages := union .RegularPages .Sections }}
 {{ $pages = where site.RegularPages "Type" "post" }}
 
 <!-- Articles -->
