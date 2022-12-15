@@ -21,6 +21,11 @@
   --dark: 22, 22, 22;
   --hljs-bg: #111;
 
+  --orange:rgb(232, 82, 1);
+  --blue:rgb(1, 147, 232);
+  --green: rgb(78, 241, 181);
+  --red: rgb(241, 104, 78);
+
   --safe-bottom: 0;
 }
 
@@ -117,7 +122,7 @@ h6 {
   color: var(--pro);
 }
 h3 {
-  color: #0193e8;
+  color: var(--blue);
 }
 
 p {
@@ -144,7 +149,7 @@ ol {
 }
 
 a {
-  color: #F1684E;
+  color: var(--red);
   text-decoration: none;
 }
 
@@ -215,24 +220,13 @@ img {
 }
 
 .site-name {
-  max-width: calc(100% - 2rem - 3rem);
+  max-width: calc(100%);
   padding-bottom: 0.3rem;
   overflow: auto;
   font-size: 3.4rem;
   font-weight: 700;
   white-space: nowrap;
-}
-
-.btn-dark {
-  width: 3rem;
-  margin-left: 2rem;
-  cursor: pointer;
-  background: url(./theme.png) left / auto 3rem no-repeat;
-  transition: background-position 0.4s steps(5);
-}
-
-.dark .btn-dark {
-  background-position: right;
+  color: var(--orange);
 }
 
 .menu {
