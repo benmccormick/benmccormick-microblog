@@ -226,7 +226,7 @@ img {
   font-size: 3.4rem;
   font-weight: 700;
   white-space: nowrap;
-  color: var(--orange);
+  color: var(--orange) !important;
 }
 
 .menu {
