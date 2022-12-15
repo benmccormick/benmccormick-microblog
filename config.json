@@ -1,2 +1,7 @@
 {
+    "markup": {
+        "highlight": {
+          "style": "dracula"
+        }
+      }
 }
