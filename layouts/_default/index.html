@@ -34,7 +34,7 @@
   </article>
   {{ else }}
   <article class="post-entry-content">
-    <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
+    <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }}</a></time>
     <section class="post-content">{{ .Content }}</section>
   </article>
   <!-- <hr class="post-separator"> -->
