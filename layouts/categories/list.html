@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-	
+	{{ if .Page.Title }}<h1 class="archive-title">{{ .Page.Title }}</h1> {{ end }}
 	{{ $list := union .RegularPages .Sections }}
 	{{ range $list }}
 
