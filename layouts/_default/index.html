@@ -21,8 +21,7 @@
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
-{{ $pages = where site.RegularPages "Type" "post" }}
-{{ $pages = where site.RegularPages "Title" "!=" ""}}
+{{ $pages = where (where site.RegularPages "Type" "post") "Title" "!=" ""}}
 
 <!-- Articles -->
 {{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
