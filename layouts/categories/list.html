@@ -4,13 +4,18 @@
 	{{ if eq .Page.Title "microblog" }}<h1 class="archive-title">All Micro Blog Posts</h1> {{ end }}
 	{{ $list := union .RegularPages .Sections }}
 	{{ range $list }}
-
-		<p class="archive-entry">
-			<a href="{{ .Permalink }}" class="u-url"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</span></a>:
-			<span class="p-name"><b>{{ .Title }}</b></span> 
-			<span class="p-summary">{{ .Summary | truncate 100 }}</span>
-		</p>
-
+		{{ if eq .Page.Title "microblog" }}
+			<article class="post-entry-content">
+				<time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
+				<section class="post-content">{{ .Content }}</section>
+			</article>
+		{{ else }}
+			<p class="archive-entry">
+				<a href="{{ .Permalink }}" class="u-url"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</span></a>:
+				<span class="p-name"><b>{{ .Title }}</b></span> 
+				<span class="p-summary">{{ .Summary | truncate 100 }}</span>
+			</p>
+		{{ end }}
 	{{ end }}
 
 {{ end }}
