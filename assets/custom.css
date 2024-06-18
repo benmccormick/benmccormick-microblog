@@ -8,10 +8,12 @@ twitterwidget {
   .twitter-tweet {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
   }
 
 .post-content img {
-    margin-inline: 60px;
+    margin-inline: inherit !important;
 }
 
 .home-divider {
