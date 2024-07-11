@@ -35,12 +35,12 @@
 {{ end }}
 
 <hr class="home-divider">
-<h2>Microblog</h2>
+<h2>Micro blog</h2>
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
 {{ $cats := slice "microblog" }}
-{{ $microblogs := where (where site.RegularPages "Type" "post") "Categories" "intersect" $cats | first 10}}
+{{ $microblogs := where (where site.RegularPages "Type" "post") ".Params.categories" "intersect" $cats | first 10}}
 
 <!-- Articles -->
 {{ $paginator2 := .Paginate $microblogs }} 
