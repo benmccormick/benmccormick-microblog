@@ -14,6 +14,7 @@
 
 
 <hr class="home-divider">
+<h2>Articles</h2>
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
@@ -30,6 +31,23 @@
       {{ .Date.Format "2006-01-02" }}
     </span>
   </p>
+ 
+{{ end }}
+
+<hr class="home-divider">
+<h2>Microblog</h2>
+
+<!-- $pages -->
+{{ $pages := union .RegularPages .Sections }}
+{{ $articles := where (where site.RegularPages "Type" "post") "Title" "==" "" | first 10}}
+
+<!-- Articles -->
+{{ $paginator := .Paginate $articles }} 
+{{ range $index, $page := $paginator.Pages }}
+  <article class="post-entry-content">
+    <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
+    <section class="post-content">{{ .Content }}</section>
+  </article>
  
 {{ end }}
 
