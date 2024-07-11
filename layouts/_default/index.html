@@ -17,24 +17,17 @@
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
-{{ $pages = where (where site.RegularPages "Type" "post") "Title" "!=" ""}}
+{{ $articles = where (where site.RegularPages "Type" "post") "Title" "!=" ""}}
 
 <!-- Articles -->
-{{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
-  {{ if .Title}}
+{{ $paginator := .Paginate $articles }} {{ range $index, $page := $paginator.Pages }}
   <article class="post-entry">
     <h2>{{ .Title }}</h2>
     <time>{{ .Date | time.Format ":date_medium" }}</time>
     <p>{{ .Summary | truncate 300 }}</p>
     <a href="{{ .Permalink }}"></a>
   </article>
-  {{ else }}
-  <article class="post-entry-content">
-    <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }}</a></time>
-    <section class="post-content">{{ .Content }}</section>
-  </article>
-  <!-- <hr class="post-separator"> -->
-  {{ end }}
+ 
 {{ end }}
 
 <!-- Main Nav -->
