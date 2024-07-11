@@ -373,7 +373,7 @@ hr.post-separator:before {
 /* Post single
  -------------------------------------------------- */
 .post-title {
-  margin-bottom: calc(var(--y-gap) + 1rem);
+  margin-bottom: 3rem;
 }
 
 .post-title p, .post-date {
