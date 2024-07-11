@@ -48,3 +48,12 @@ twitterwidget {
     border-bottom: 1px solid #f1684e;
 }
 
+
+.archive-entry {
+    display: flex;
+    justify-content: space-between;
+}
+
+.archive-entry .dt-published {
+    font-family:'Courier New', Courier, monospace;
+}
