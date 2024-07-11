@@ -21,12 +21,11 @@
 
 <!-- Articles -->
 {{ $paginator := .Paginate $articles }} {{ range $index, $page := $paginator.Pages }}
-  <article class="post-entry">
-    <h2>{{ .Title }}</h2>
-    <time>{{ .Date | time.Format ":date_medium" }}</time>
-    <p>{{ .Summary | truncate 300 }}</p>
-    <a href="{{ .Permalink }}"></a>
-  </article>
+  <p class="archive-entry">
+    <a href="{{ .Permalink }}" class="u-url"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</span></a>:
+    <span class="p-name"><b>{{ .Title }}</b></span> 
+    <span class="p-summary">{{ .Summary | truncate 100 }}</span>
+  </p>
  
 {{ end }}
 
