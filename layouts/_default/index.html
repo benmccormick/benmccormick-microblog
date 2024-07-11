@@ -40,11 +40,11 @@
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
 {{ $cats := slice "microblog" }}
-{{ $microblogs := where (where site.RegularPages "Type" "post") "Categories" "intersect" | first 10}}
+{{ $microblogs := where (where site.RegularPages "Type" "post") "Categories" "intersect" $cats | first 10}}
 
 <!-- Articles -->
-{{ $paginator := .Paginate $microblogs }} 
-{{ range $index, $page := $paginator.Pages }}
+{{ $paginator2 := .Paginate $microblogs }} 
+{{ range $index, $page := $paginator2.Pages }}
   <article class="post-entry-content">
     <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
     <section class="post-content">{{ .Content }}</section>
