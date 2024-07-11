@@ -39,7 +39,8 @@
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
-{{ $microblogs := where (where site.RegularPages "Type" "post") "Title" "" | first 10}}
+{{ $cats := slice "microblog" }}
+{{ $microblogs := where (where site.RegularPages "Type" "post") "Categories" "intersect" | first 10}}
 
 <!-- Articles -->
 {{ $paginator := .Paginate $microblogs }} 
