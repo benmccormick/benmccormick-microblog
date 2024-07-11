@@ -39,10 +39,10 @@
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
-{{ $articles := where (where site.RegularPages "Type" "post") "Title" "==" "" | first 10}}
+{{ $microblogs := where (where site.RegularPages "Type" "post") "Title" "==" "" | first 10}}
 
 <!-- Articles -->
-{{ $paginator := .Paginate $articles }} 
+{{ $paginator := .Paginate $microblogs }} 
 {{ range $index, $page := $paginator.Pages }}
   <article class="post-entry-content">
     <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
