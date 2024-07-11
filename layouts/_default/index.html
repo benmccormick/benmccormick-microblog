@@ -21,8 +21,7 @@
 {{ $articles := where (where site.RegularPages "Type" "post") "Title" "!=" "" | first 10}}
 
 <!-- Articles -->
-{{ $paginator := .Paginate $articles }} 
-{{ range $index, $page := $paginator.Pages }}
+{{ range $index, $page := $articles}}
   <p class="archive-entry">
     <a href="{{ .Permalink }}" class="u-url"> 
       <span class="p-name"><b>{{ .Title }}</b></span> 
@@ -39,11 +38,10 @@
 
 <!-- $pages -->
 {{ $cats := slice "microblog" }}
-{{ $microblogs := (where (where site.RegularPages "Type" "post") ".Params.categories" "intersect" $cats) | first 10}}
+{{ $microblogs := (where (where site.RegularPages "Type" "post") "Params.categories" "intersect" $cats) | first 10}}
 
 <!-- Articles -->
-{{ $paginator2 := .Paginate $microblogs }} 
-{{ range $index, $page := $paginator2.Pages }}
+{{ range $index, $page := $microblogs }}
   <article class="post-entry-content">
     <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
     <section class="post-content">{{ .Content }}</section>
