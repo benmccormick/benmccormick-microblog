@@ -40,6 +40,11 @@ twitterwidget {
 .post-entry-content.bordered-post {
     display: block;
     padding: 2rem;
-    transition: transform .1s;
     border: 1px solid #f1684e;
+    border-bottom: 0;
 }
+
+.post-entry-content.bordered-post:last-child {
+    border-bottom: 1px solid #f1684e;
+}
+
