@@ -57,3 +57,7 @@ twitterwidget {
 .archive-entry .dt-published {
     font-family:'Courier New', Courier, monospace;
 }
+
+.archive-entry > a {
+    border-bottom: none;
+}
