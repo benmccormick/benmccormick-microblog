@@ -20,6 +20,10 @@ twitterwidget {
     margin: 30px 0;
 }
 
+.microblog-top {
+    margin-bottom: 3rem;
+}
+
 .welcome-blurb p {
     margin-bottom: 10px;
 }
@@ -31,4 +35,11 @@ twitterwidget {
 .archive-title {
     font-size:1.5em;
     margin-bottom:1em;
+}
+
+.post-entry-content.bordered-post {
+    display: block;
+    padding: 2rem;
+    transition: transform .1s;
+    border: 1px solid #f1684e;
 }

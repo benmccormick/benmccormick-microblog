@@ -34,7 +34,7 @@
 {{ end }}
 
 <hr class="home-divider">
-<h2>Microblog</h2>
+<h2 class="microblog-top">Microblog</h2>
 
 <!-- $pages -->
 {{ $cats := slice "microblog" }}
@@ -42,7 +42,7 @@
 
 <!-- Articles -->
 {{ range $index, $page := $microblogs }}
-  <article class="post-entry-content">
+  <article class="post-entry-content bordered-post">
     <time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
     <section class="post-content">{{ .Content }}</section>
   </article>
