@@ -1,7 +1,6 @@
 {{ define "main" }}
 
 	{{ if eq .Page.Title "article" }}<h1 class="archive-title">All Long Form Articles</h1> {{ end }}
-	{{ if eq .Page.Title "microblog" }}<h1 class="archive-title">All Micro Blog Posts</h1> {{ end }}
 	{{ $list := union .RegularPages .Sections }}
 	{{ $title := .Page.Title}}
 	{{ range $list }}
