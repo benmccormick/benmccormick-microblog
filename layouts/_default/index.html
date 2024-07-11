@@ -17,27 +17,21 @@
 
 <!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
-{{ $articles := where (where site.RegularPages "Type" "post") "Title" "!=" ""}}
+{{ $articles := where (where site.RegularPages "Type" "post") "Title" "!=" "" | first 10}}
 
 <!-- Articles -->
-{{ $paginator := .Paginate $articles }} {{ range $index, $page := $paginator.Pages }}
+{{ $paginator := .Paginate $articles }} 
+{{ range $index, $page := $paginator.Pages }}
   <p class="archive-entry">
-    <a href="{{ .Permalink }}" class="u-url"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</span></a>:
-    <span class="p-name"><b>{{ .Title }}</b></span> 
+    <a href="{{ .Permalink }}" class="u-url"> 
+      <span class="p-name"><b>{{ .Title }}</b></span> 
+    </a>:
+    <span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">
+      {{ .Date.Format "2006-01-02" }}
+    </span>
   </p>
  
 {{ end }}
 
-<!-- Main Nav -->
-{{ if gt $paginator.TotalPages 1 }}
-<nav class="main-nav">
-  {{ if $paginator.HasPrev }}
-  <a class="prev" href="{{ $paginator.Prev.URL }}">← Prev Page</a>
-  {{ end }}<!---->
-  {{ if $paginator.HasNext }}
-  <a class="next" href="{{ $paginator.Next.URL }}">Next Page →</a>
-  {{ end }}
-</nav>
-{{ end }}<!---->
 
 {{ end }}
