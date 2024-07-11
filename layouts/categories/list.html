@@ -6,7 +6,7 @@
 	{{ $title := .Page.Title}}
 	{{ range $list }}
 		{{ if eq $title "microblog" }}
-			<article class="post-entry-content">
+			<article class="post-entry-content bordered-post">
 				<time><a href="{{ .Permalink }}">{{ .Date | time.Format ":date_medium" }} ⌘</a></time>
 				<section class="post-content">{{ .Content }}</section>
 			</article>
