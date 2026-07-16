@@ -21,7 +21,7 @@
 {{ $allworkarticles := where $with_title "Params.categories" "intersect" (slice "Work") }}
 {{ $workarticles := $allworkarticles | first 10 }}
 
-{{ $lifearticles := collections.Complement $allworkarticles $posts | first 10 }}
+{{ $lifearticles := collections.Complement $allworkarticles $with_title | first 10 }}
 
 
 <h2>Work</h2>
