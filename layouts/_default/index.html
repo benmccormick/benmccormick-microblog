@@ -18,9 +18,10 @@
 {{ $pages := union .RegularPages .Sections }}
 {{ $posts := where site.RegularPages "Type" "post" }}
 {{ $with_title := where $posts "Title" "!=" "" }}
-{{ $workarticles := where $with_title "Params.categories" "intersect" (slice "Work") | first 10 }}
+{{ $allworkarticles := where $with_title "Params.categories" "intersect" (slice "Work") }}
+{{ $workarticles := $allworkarticles | first 10 }}
 
-{{ $lifearticles := where $with_title "Params.categories" "not intersect" (slice "Work") | first 10 }}
+{{ $lifearticles := collections.Complement $allworkarticles $posts | first 10 }}
 
 
 <h2>Work</h2>
