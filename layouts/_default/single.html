@@ -5,9 +5,6 @@
     {{if eq .Type "post" }}
     <p>
       <a class="u-url" href="{{ .Permalink }}"><time class="dt-published">{{ .Date | time.Format ":date_medium" }}</time></a>
-      {{ if or .Params.Author site.Author.name }}
-      <span>{{ .Params.Author | default site.Author.name }}</span>
-      {{ end }}
     </p>
     {{ end }}
     <h1 class="p-name">{{ .Title }}</h1>
