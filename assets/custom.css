@@ -4,7 +4,7 @@ twitterwidget {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .twitter-tweet {
     margin-left: auto;
     margin-right: auto;
@@ -39,13 +39,8 @@ twitterwidget {
 
 .post-entry-content.bordered-post {
     display: block;
-    padding: 2rem;
-    border: 1px solid #f1684e;
-    border-bottom: 0;
-}
-
-.post-entry-content.bordered-post:last-child {
-    border-bottom: 1px solid #f1684e;
+    padding: 0 2rem;
+    margin-bottom: 8rem;
 }
 
 
